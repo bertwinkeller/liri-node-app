@@ -11,7 +11,7 @@ var spotify = new Spotify(keys.spotify);
 
 // sets process arguments for command line reference
 let command = process.argv[2]
-let title = process.argv[3]
+let title = process.argv.slice(3).join(' ')
 
 // brings in axios 
 var axios = require('axios');
@@ -47,8 +47,16 @@ switch (command) {
 
                 return console.log('Error occurred: ' + err);
             }
-
-            console.log(data.tracks.items[0]);
+           
+            let artist_object = data.tracks.items[0];
+console.log(`*------------------------------------*
+Artist: ${artist_object.artists[0].name}
+Song Name: ${artist_object.name}
+Preview Link: ${artist_object.preview_url}
+Album Name: ${artist_object.album.name}
+*------------------------------------*
+`
+                         );
         });
 
 
