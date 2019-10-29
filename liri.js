@@ -110,7 +110,18 @@ break;
     
 break;
     case "do-what-it-says":
-
+fs.readFile('./random.txt','utf8',function (err,data){
+    if(err){
+        console.log(err)
+    }else{
+    content = data.split(",");
+    command = content[0];
+    title = content[1];
+    console.log(command,title)
+    
+    }
+    
+})
 
 break;
 }
