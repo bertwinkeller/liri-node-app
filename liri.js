@@ -117,7 +117,23 @@ fs.readFile('./random.txt','utf8',function (err,data){
     content = data.split(",");
     command = content[0];
     title = content[1];
-    console.log(command,title)
+    song = title;
+    spotify.search({ type: 'track', query: song }, function (err, data) {
+        if (err) {
+
+            return console.log('Error occurred: ' + err);
+        }
+        console.log(song)
+        let artist_object = data.tracks.items[0];
+console.log(`*------------------------------------*
+Artist: ${artist_object.artists[0].name}
+Song Name: ${artist_object.name}
+Preview Link: ${artist_object.preview_url}
+Album Name: ${artist_object.album.name}
+*------------------------------------*
+`
+                     );
+    });
     
     }
     
