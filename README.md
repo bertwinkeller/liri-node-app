@@ -33,7 +33,7 @@ node packages
 
         * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-    ![](./images/concert.png)
+![](./images/concert.png)
 
     2. node liri.js spotify-this-song '<song name here>'
     This will show the following information about the song in your terminal/bash window
@@ -50,7 +50,7 @@ node packages
 
         * The album that the song is from
 
-        ![](./images/spotify.png)
+![](./images/spotify.png)
 
 
     3. node liri.js movie-this '<movie name here>'
@@ -65,7 +65,7 @@ node packages
         * Plot of the movie.
         * Actors in the movie.
 
-        ![](./images/movie.png)
+![](./images/movie.png)
 
 
     4.node liri.js do-what-it-says
