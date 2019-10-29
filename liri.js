@@ -1,6 +1,9 @@
 // Reads environment variables in dotenv package
 require("dotenv").config();
 
+// require fs node package
+const fs = require('fs');
+
 // imports keys.js file and stores it in a variable 
 var keys = require("./keys.js");
 
@@ -26,9 +29,18 @@ switch (command) {
         let artist = title;
         let url = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
         axios.get(url)
-            .then(function (response) {
+            .then(function (data) {
                 // handle success
-                console.log(response);
+                for(let i = 0; i < data.data.length; i++){
+let eventDate = moment(data.data[i].datetime).format('MM/DD/YYYY');
+console.log(
+`----------------------------
+Venue: ${data.data[i].venue.name}
+Location: ${data.data[i].venue.city}, ${data.data[i].venue.region}
+Event Date: ${eventDate}
+----------------------------`
+)
+                };
             })
             .catch(function (error) {
                 // handle error
@@ -95,9 +107,7 @@ break;
           // handle error
           console.log(error);
         })
-        .finally(function () {
-          // always executed
-        });
+    
 break;
     case "do-what-it-says":
 
