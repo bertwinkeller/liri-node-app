@@ -20,7 +20,8 @@ node packages
 
 ### What each command does
 
-    1. node liri.js spotify-this-song '<song name here>' 
+    1. node liri.js concert-this <artist/band name here>
+
     This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")for an artist and render the following information about each event to the terminal:
 
 
@@ -31,6 +32,8 @@ node packages
 
 
         * Date of the Event (use moment to format this as "MM/DD/YYYY")
+
+    ![GitHub Logo](./images/concert.png)
 
     2. node liri.js spotify-this-song '<song name here>'
     This will show the following information about the song in your terminal/bash window
@@ -47,6 +50,9 @@ node packages
 
         * The album that the song is from
 
+        ![GitHub Logo](./images/spotify.png)
+
+
     3. node liri.js movie-this '<movie name here>'
 
     This will output the following information to your terminal/bash window:
@@ -58,6 +64,9 @@ node packages
         * Language of the movie.
         * Plot of the movie.
         * Actors in the movie.
+
+        ![GitHub Logo](./images/movie.png)
+
 
     4.node liri.js do-what-it-says
 
